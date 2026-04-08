@@ -1,0 +1,26 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<div class="container">
+<h2>Đơn hàng</h2>
+<form method="post" action="/add_order">
+<select name="customer_id" class="form-control">
+{% for c in customers %}
+<option value="{{ c[0] }}">{{ c[1] }}</option>
+{% endfor %}
+</select>
+
+<select name="product_id" class="form-control mt-2">
+{% for p in products %}
+<option value="{{ p[0] }}">{{ p[1] }}</option>
+{% endfor %}
+</select>
+
+<input name="quantity" class="form-control mt-2" placeholder="Số lượng">
+<button class="btn btn-success mt-2">Tạo đơn</button>
+</form>
+
+<ul>
+{% for o in orders %}
+<li>{{ o }}</li>
+{% endfor %}
+</ul>
+</div>

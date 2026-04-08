@@ -1,0 +1,17 @@
+<h2>Đơn hàng</h2>
+
+<form method="post" action="/add_order">
+  <input name="customer_id" placeholder="ID khách">
+  <input name="product_id" placeholder="ID sản phẩm">
+  <input name="quantity" placeholder="Số lượng">
+  <input name="price" placeholder="Giá">
+  <button type="submit">Tạo đơn</button>
+</form>
+
+<ul>
+{% for o in orders %}
+  <li>{{ o }}</li>
+{% endfor %}
+</ul>
+
+<a href="/">Quay lại</a>
